@@ -296,3 +296,4 @@ const seasonOne = [
 `I'm afraid that inflation has forced me to institute a small fee for my services.`,
 `Find some other way to feel. Then you won't feel sad.`,
 `You just made ten bucks off of that poor girl's suffering.`
+]
