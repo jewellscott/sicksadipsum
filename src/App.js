@@ -13,8 +13,6 @@ function App() {
     e.preventDefault();
   }
 
-  
-
   return (
     <div className="App container">
       <header>
@@ -36,7 +34,7 @@ function App() {
           </select>
 
           <input type="submit" value="Generate"/>
-          <button className="copy"><img src="https://img.icons8.com/pix/32/undefined/experimental-copy-pix.png" alt="Copy to Clipboard"/></button>
+          <button className="copy">Copy to Clipboard</button>
         </form>
       </header>
       <main>
