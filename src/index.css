@@ -11,3 +11,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background-color: #347701;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background-color: #CDCD32;
+  max-width: 960px;
+  border-radius: 1%;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-bottom: 4rem;
+}
+
+header {
+  margin-top: 4rem;
+  padding-top: 2rem;
+}
+
+h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+header p {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+form > * {
+  margin: .5rem;
+  font-weight: bold;
+}
+
+.p-qty {
+  max-width: 3rem;
+}
+
+.textarea {
+  max-width: 800px;
+  height: 600px;
+  margin: 4rem 2rem;
+  text-align: left;
+  line-height: 1.25rem;
+  max-height: 960px;
+  background-color: #FFFF9A;
+  padding: 4rem;
+  border-radius: 1%;
+  font-weight: 500;
+  border: 20px solid #347701;
+  overflow-y: scroll;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.copy img {
+  max-height: .75rem;
+}
