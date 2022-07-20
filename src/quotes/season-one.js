@@ -1,13 +1,15 @@
-const seasonOne = [
+export const seasonOne = [
 `I'm just saying you don't make friends as easily as... uh, some people.`,
 `I'll try to help her through this difficult period of adjustment.`,
 `Don't worry. It's a psychological test. You're automatically exempt.`,
+`And besides, nobody ever said they were going steady! And if he does wanna go steady, he's gotta do a lot better than 'movie, burger, backseat,' 'movie-burger-backseat,' because there are plenty of guys with bigger backseats waiting to take her someplace nice.`
 `Um... a herd of beautiful wild ponies running free across the plains.`,
 `Last time I took one of these tests, they told me they were clouds. They said they could be whatever I wanted.`,
-`Daria, can you concisely and unemotionally sum up for us the doctrine of Mainfest Destiny?`,
+`Can you concisely and unemotionally sum up for us the doctrine of Mainfest Destiny?`,
 `A lot of good men died in that conflict, Kevin. I believe we owe it to them to at least get the century right!`,
+`Son, promise me you'll come back and see me someday when you've got the Heisman trophy, and a chain of oil dealerships, and I'm saving up for a second pair of pants!`
 `Well, my history teacher hates me because I know all the answers, but there are some interesting idiots in my class.`,
-`Not much chance of that happening... unless there's uranium in the drinking water here, too`,
+`Not much chance of that happening... unless there's uranium in the drinking water here, too.`,
 `We tell you over and over again that you're wonderful and you just... don't... get it! What's wrong with you?!`,
 `Is she going to have, like, a breakdown or something? 'Cause that could really mess me up with my new friends.`,
 `Don't worry. I don't have low self-esteem. It's a mistake. I have low esteem for everyone else.`,
@@ -154,7 +156,7 @@ const seasonOne = [
 `Can anyone give me another example of a group using coercive techniques such as peer pressure, chanting, and social isolation to achieve control over its members?`,
 `Ah, Brittany. Sometimes, despite a complete lack of insight, you stumble upon an interesting answer.`,
 `She'll never have to worry about mind control. ...No, but she'll have to watch out for ferrets building a nest in her head.`,
-`She's well liked among classmates of both sexes, and yet, strangely, she turns my stomach.`,
+`She's well-liked among classmates of both sexes, and yet, strangely, she turns my stomach.`,
 `Some are weird. Some are just astonishingly self-centered and deceitful.`,
 `They bake cookies by day, but they really heat up the night! G-string grandmas, today on Sick, Sad World.`,
 `This color looks nothing like melon. It's way too pink.`,
