@@ -1,7 +1,8 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { randomize } from './utils/randomize';
-import { seasonOne } from './quotes/season-one';
+import { quotes } from './quotes/quotes';
+import { defaultQuotes } from './quotes/default-quotes'
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
     paraQty: 5,
     paraLength: 'medium',
     outputArr: [],
-    output: `Tonight, on Sick, Sad World: a prime-time special about people just like you, only more pathetic. We were born in this room, we grew up in this room, and we thought we would die here... alone. But now you've arrived, and our lives can truly begin. Aren't you a little out of place here? And everywhere else on Earth? I got off. Enjoy prison.`,
+    outputCopy: [],
+    outputList: defaultQuotes.map(i => <p>{i}</p>),
     oneLiner: `My biggest fear right now is that I’ll wake up and this conversation won’t be a dream.`
   })
 
@@ -17,40 +19,38 @@ function App() {
     e.preventDefault();
     setState({...state, outputArr: []})
     for (let i = 0; i < state.paraQty; i++) {
-      randomize(seasonOne);
+      randomize(quotes);
       let sentences = [];
       if (state.paraLength === 'short') {
         for (let i = 0; i < 3; i++) {
-          sentences.push(seasonOne[i])
+          sentences.push(quotes[i])
         }
       } else if (state.paraLength === 'medium') {
         for (let i = 0; i < 5; i++) {
-          sentences.push(seasonOne[i])
+          sentences.push(quotes[i])
         }
       } else {
         for (let i = 0; i < 7; i++) {
-          sentences.push(seasonOne[i])
+          sentences.push(quotes[i])
         }
       }
       let para = sentences.join(' ');
       state.outputArr.push(para);
     }
-    let paras = state.outputArr.join('\n\n')
-    // later: map nested arrays into p tags in the output
-    setState({...state, output: paras});
-    console.log(state.output);
-    }  
+    setState({...state, outputList: state.outputArr.map(i => <p>{i}</p>), outputCopy: state.outputArr.join('\n\n'), outputArr: []})
+  }  
 
- 
-
-
+  const handleCopy = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(state.outputCopy);
+  }
 
   return (
     <div className="App container">
       <header>
         <h1>Sick, Sad Ipsum</h1>
         <p>{state.oneLiner}</p>
-        <form onSubmit={getIpsum}>
+        <form>
           <label htmlFor="p-qty">Paragraph Number:</label>
           <input 
           className="p-qty"
@@ -68,14 +68,13 @@ function App() {
             <option value="medium">Medium</option>
             <option value="long">Long</option>
           </select>
-          <input type="submit" value="Generate"/>
-          <button className="copy">Copy to Clipboard</button>
+          <input type="submit" value="Generate" onClick={getIpsum}/>
+          <button className="copy" onClick={handleCopy}>Copy to Clipboard</button>
         </form>
       </header>
       <main>
         <div className="textarea">
-          <p>{state.output}</p>
-          <p>{state.outputArr}</p>
+          {state.outputList}
         </div>
       </main>
     </div>
