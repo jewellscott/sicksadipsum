@@ -1,48 +1,27 @@
 import './App.css';
 import { useState } from 'react';
-import { randomize } from './utils/randomize';
-import { quotes } from './quotes/quotes';
 import { defaultQuotes } from './quotes/default-quotes'
+import { getParagraphs } from './utils/get-paragraph';
 
 function App() {
 
   const [ state, setState ] = useState({
     paraQty: 5,
-    paraLength: 'medium',
-    outputArr: [],
-    outputCopy: [],
-    outputList: defaultQuotes.map(i => <p>{i}</p>),
+    paraLength: 5,
+    outputArr: defaultQuotes,
     oneLiner: `My biggest fear right now is that I’ll wake up and this conversation won’t be a dream.`
   })
 
   const getIpsum = (e) => {
     e.preventDefault();
-    setState({...state, outputArr: []})
-    for (let i = 0; i < state.paraQty; i++) {
-      randomize(quotes);
-      let sentences = [];
-      if (state.paraLength === 'short') {
-        for (let i = 0; i < 3; i++) {
-          sentences.push(quotes[i])
-        }
-      } else if (state.paraLength === 'medium') {
-        for (let i = 0; i < 5; i++) {
-          sentences.push(quotes[i])
-        }
-      } else {
-        for (let i = 0; i < 7; i++) {
-          sentences.push(quotes[i])
-        }
-      }
-      let para = sentences.join(' ');
-      state.outputArr.push(para);
-    }
-    setState({...state, outputList: state.outputArr.map(i => <p>{i}</p>), outputCopy: state.outputArr.join('\n\n'), outputArr: []})
+   let paraArr = getParagraphs(state.paraQty, state.paraLength);
+
+    setState({...state, outputArr: paraArr})
   }  
 
   const handleCopy = (e) => {
     e.preventDefault();
-    navigator.clipboard.writeText(state.outputCopy);
+    navigator.clipboard.writeText(state.outputArr.join('\n\n'));
   }
 
   return (
@@ -62,11 +41,11 @@ function App() {
           <select 
             id="p-length" 
             value={state.paraLength} 
-            onChange={(e) => setState({...state, paraLength: e.target.value})}
+            onChange={(e) => setState({...state, paraLength: +e.target.value})}
           >
-            <option value="short">Short</option>
-            <option value="medium">Medium</option>
-            <option value="long">Long</option>
+            <option value="3">Short</option>
+            <option value="5">Medium</option>
+            <option value="7">Long</option>
           </select>
           <input type="submit" value="Generate" onClick={getIpsum}/>
           <button className="copy" onClick={handleCopy}>Copy to Clipboard</button>
@@ -74,7 +53,7 @@ function App() {
       </header>
       <main>
         <div className="textarea">
-          {state.outputList}
+          {state.outputArr.map(i => <p>{i}</p>)}
         </div>
       </main>
     </div>
