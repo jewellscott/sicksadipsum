@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sicksadipsum/static/css/main.291cc400.css",
+    "main.js": "/sicksadipsum/static/js/main.d26babd6.js",
+    "static/js/787.c599a8b0.chunk.js": "/sicksadipsum/static/js/787.c599a8b0.chunk.js",
+    "index.html": "/sicksadipsum/index.html",
+    "main.291cc400.css.map": "/sicksadipsum/static/css/main.291cc400.css.map",
+    "main.d26babd6.js.map": "/sicksadipsum/static/js/main.d26babd6.js.map",
+    "787.c599a8b0.chunk.js.map": "/sicksadipsum/static/js/787.c599a8b0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.291cc400.css",
+    "static/js/main.d26babd6.js"
+  ]
+}
